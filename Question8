@@ -1,0 +1,9 @@
+-- Question 8
+-- Write a report to show the total of Employee Salary for a Department
+
+SELECT
+    SUM(DEPARTMENT), DEPARTMENT
+FROM
+    EMPLOYEES_DATE
+WHERE
+    DEPARTMENT_ID = 1
