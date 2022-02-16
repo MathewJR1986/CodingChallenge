@@ -1,0 +1,24 @@
+-- Question 4
+-- Create an appropriate executable database object to allow the Salary for an Employee to be increased or decreased by a percentage
+CREATE PROCEDURE SALARY_CHANGE(P_EMPLOYEE_ID IN EMPLOYEES_FILE.EMPLOYEE_ID,
+P_NEW_SALARY_PERCENTAGE IN EMPLOYEES_FILE.SALARY) IS NAME_OF_EMPLOYEE varchar(50);
+ 
+BEGIN
+  
+    SELECT 
+        EMPLOYEE_SALARY_INCREASE INTO EMPLOYEE_SALARY_INCREASE
+    FROM 
+        EMPLOYEES_FILE
+    WHERE 
+        EMPLOYEE_ID = P_EMPLOYEE_ID;
+        
+    UPDATE 
+        EMPLOYEES_FILE
+    SET 
+        SALARY = SALARY + (SALARY * P_NEW_SALARY_PERCENTAGE/100) -- Take Salary & multiply by percentage given then divide by 100
+    WHERE 
+        employee_id = p_employee_id;  
+        
+    COMMIT  
+    END;
+/
