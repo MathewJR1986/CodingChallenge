@@ -1,0 +1,9 @@
+-- Question 7
+-- Write a report to show all Employees for a Department
+
+SELECT
+    *
+FROM
+    EMPLOYEES_DATA
+WHERE
+    DEPARTMENT_ID = 2
